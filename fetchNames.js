@@ -2,14 +2,14 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
 // Change to your URL (Must have Access-Control-Allow-Origin header to allow CORS)
-var csvUrl = "names.csv";
+var textFile = "names.txt";
 
-function handleCSVResult(csvString) {
+function handleCSVResult(textString) {
   // Get the div element to append the data to
   var dataArea = document.querySelector('#name_list');
   
-  // Split csv to rows
-  var rows = csvString.split('\n');
+  // Split data to rows
+  var rows = textString.split('\n');
   
   var htmlStr = '';
   var date = "";
@@ -32,17 +32,17 @@ function handleCSVResult(csvString) {
 	
   }
   
-  // Set the string generated from CSV as HTML of the dedicated div
+  // Set the string generated from txt as HTML of the dedicated div
   dataArea.innerHTML = htmlStr;
 }
 
 // Init Ajax Object
 var ajax = new XMLHttpRequest();
 
-// Set a GET request to the URL which points to your CSV file
-ajax.open('GET', csvUrl);
+// Set a GET request to the URL which points to your txt file
+ajax.open('GET', textFile);
 
-// Set the action that will take place once the browser receives your CSV
+// Set the action that will take place once the browser receives your txt
 ajax.onreadystatechange = function() {
   if (ajax.readyState === XMLHttpRequest.DONE && ajax.status === 200) {
     // Request was successful
