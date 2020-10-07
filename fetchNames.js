@@ -24,10 +24,9 @@ function handleCSVResult(textString) {
     if (cells.length == 3) {
 		date = row;
 		htmlStr += '<br>';
-		htmlStr += '<h3>' + date + '</h3>';
 	}
 	else {
-		htmlStr += '<li class="list-group-item"><h5>' + row + '</h5></li>';
+		htmlStr += '<li class="list-group-item"><h5>' + row + '- <i>' + date + '</i>' + '</h5></li>';
 	}
 	
   }
