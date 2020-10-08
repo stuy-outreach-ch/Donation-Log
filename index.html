@@ -9,22 +9,30 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 		<link rel="stylesheet" href="page.css">
 		<title>Donation Tracker</title>
-		
-		<!-- JavaScript -->
-		<script src="fetchNames.js"></script>
   	</head>
-  	<body class="background-color">
+  	<body>
 			
 		<!-- Header -->
-		<div class="jumbotron">
+		<div class="jumbotron margin=0">
 			<h1 class="display-4">Donation Tracker</h1>
 			<p class="lead">A list of names of people that have donated</p>
 			<hr class="my-4">
-			<p>Enter your name below</p>
 
-			<form class="form-inline mb-3">
-				<input class="form-control mr-sm-2" type="text" id="search-bar" onkeyup="filterSearch()" placeholder="Enter Name">
-			</form>
+			<div class="d-flex flex-row">
+				<div class="p-2">
+					<p>Enter your name or date below</p>
+					<form class="form-inline mb-3">
+						<input class="form-control mr-sm-2" type="text" id="search-bar" onkeyup="filterSearch()" placeholder="Enter Name/Date">
+					</form>
+				</div>
+				
+				<div class="slidecontainer">
+					<input type="range" min="1" class="slider" id="myRange">
+					<center>
+						<p>Dates Shown: <span id="demo"></span></p>
+					</center>
+				</div>
+			  </div>
 	
 			<ul id="list-group list-group-flush">
 				<div id="name_list">
@@ -36,5 +44,6 @@
     	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  	</body>
+		<script src="fetchNames.js"></script>
+	</body>
 </html>
