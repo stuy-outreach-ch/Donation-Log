@@ -44,7 +44,7 @@ function handleCSVResult(textString) {
 		htmlStr += '<br>';
 		numDates++;
 	}
-	else {
+	else if (row != "") {
 		htmlStr += '<li class="list-group-item"><h5>' + '<i>' + date + '</i> - ' + row + '</h5></li>';
 	}
 	
@@ -60,6 +60,7 @@ function getNumDates(textString) {
 	
 	// Split data to rows
 	var rows = textString.split('\n');
+	console.log(rows);
 	
 	var htmlStr = '';
 	var date = "";
@@ -77,6 +78,7 @@ function getNumDates(textString) {
 		  numDates++;
 	  }
 	  else {
+		  console.log(row);
 		  htmlStr += '<li class="list-group-item"><h5>' + '<i>' + date + '</i> - ' + row + '</h5></li>';
 	  }
 	  
